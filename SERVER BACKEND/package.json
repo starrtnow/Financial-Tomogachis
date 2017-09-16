@@ -1,0 +1,26 @@
+{
+  "name": "catfin",
+  "version": "1.0.0",
+  "description": "backend for catfin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.15.4",
+    "mssql": "^4.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mehnadnerd/catfin.git"
+  },
+  "keywords": [
+    "financial"
+  ],
+  "author": "mehnadnerd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mehnadnerd/catfin/issues"
+  },
+  "homepage": "https://github.com/mehnadnerd/catfin#readme"
+}
