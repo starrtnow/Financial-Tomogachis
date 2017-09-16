@@ -6,7 +6,7 @@ public class HouseKeeping : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        Screen.SetResolution(1080, 1920, false);
 	}
 	
 	// Update is called once per frame

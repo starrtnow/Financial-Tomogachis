@@ -29,15 +29,17 @@ public class ShowMenu : MonoBehaviour {
     public void ProcessTransaction(InputField text)
     {
         var amt = Int32.Parse(text.text);
-        var deltaHealth = API.MakeTransaction(amt, 1);
-        Logic.DeltaHealth((int)deltaHealth);
+        Logic.daily_expenditures += amt;
     }
 
     public void HidePanel(GameObject o)
     {
+
         text.text = "";
         o.SetActive(false);
     }
+
+   
 
     
 }
