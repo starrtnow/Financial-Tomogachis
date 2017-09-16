@@ -51,9 +51,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\API.cs" />
      <Compile Include="Assets\Scripts\AI.cs" />
+     <Compile Include="Assets\Scripts\ButtonDecrement.cs" />
      <Compile Include="Assets\Scripts\EpochTime.cs" />
+     <Compile Include="Assets\Scripts\FakeAPI.cs" />
      <Compile Include="Assets\Scripts\PointLogic.cs" />
+     <Compile Include="Assets\Scripts\ShowMenu.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
