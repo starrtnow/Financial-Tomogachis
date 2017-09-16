@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\EpochTime.cs" />
      <Compile Include="Assets\Scripts\FakeAPI.cs" />
      <Compile Include="Assets\Scripts\HouseKeeping.cs" />
+     <Compile Include="Assets\Scripts\makeappear.cs" />
      <Compile Include="Assets\Scripts\PointLogic.cs" />
      <Compile Include="Assets\Scripts\ShowMenu.cs" />
  <Reference Include="UnityEngine.UI">

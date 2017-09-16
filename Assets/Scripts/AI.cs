@@ -163,6 +163,7 @@ public class AI : MonoBehaviour {
     public Sprite leftSprite;
     public Sprite rightSprite;
     public Sprite sleepSprite;
+    public Sprite deadcat;
 
     public CatImages sad0;
     public CatImages sad1;
@@ -181,7 +182,7 @@ public class AI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         catState.Update();
-        HealthUpdate();
+        dead();
 	}
 
     public void Switch(State state)
@@ -242,5 +243,24 @@ public class AI : MonoBehaviour {
             transform.position += transform.right * Speed * Time.deltaTime;
         }
     }
-    
+
+    public void change_to_left()
+    {
+        Switch(new WalkState(this, 1));
+    }
+
+    public void change_to_right()
+    {
+        Switch(new WalkState(this, 0));
+    }
+
+    public void dead()
+    {
+        HealthUpdate();
+        if (GetSpeed() <= 0)
+        {
+            Speed = 0;
+            catSprite.sprite = deadcat;
+        }
+    }
 }

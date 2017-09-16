@@ -9,7 +9,7 @@ public class PointLogic : MonoBehaviour {
     // Use this for initialization
     public int totalPoints = 0;
 
-    public float daily_budget = 5.0f;
+    public float daily_budget = 17.5f;
     public float daily_expenditures = 0.0f;
 
     public GameObject msg_panel;
@@ -22,7 +22,8 @@ public class PointLogic : MonoBehaviour {
 
     void Start()
     {
-     
+        daily_budget = 17.5f;
+        daily_expenditures = 0.0f;
     }
     void add_transaction(float transaction)
     {
@@ -55,6 +56,10 @@ public class PointLogic : MonoBehaviour {
             var factor = 10 * diff / daily_budget;
             Health += (int)factor;
         }
+        else if (diff == 0)
+        {
+            msg_text.text = "You've spent exactly how much the average American teen does in a day. Did you know that, in a year, the average teen spends almost $6,400 a year?";
+        }
         else
         {
             msg_text.text = String.Format("Aww, you spent {0} more than the average American teen. With your current income, you are -2% closer to your goal of $700 dollars", -1 * diff);
@@ -74,23 +79,23 @@ public class PointLogic : MonoBehaviour {
     {
         if (Health > 80)
         {
-            return "Cat is healthy!" + Health;
+            return "Cat is healthy!";
         }
         else if (Health > 60)
         {
-            return "Cat's feeling okay." + Health;
+            return "Cat's feeling okay.";
         }
         else if (Health > 40)
         {
-            return "Cat's starting to feel a little sick..." + Health;
+            return "Cat's starting to feel a little sick...";
         }
         else if (Health > 20)
         {
-            return "Cat's not feeling so great..." + Health;
+            return "Cat's not feeling so great...";
         }
         else
         {
-            return "Your cat's close to dying!" + Health;
+            return "Your cat's close to dying!";
         }
     }
 
