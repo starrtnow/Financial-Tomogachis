@@ -19,6 +19,18 @@ public static class Http
     }
 }
 
+public class Cat
+{
+    public string id_cat;
+    public string name_cat;
+    public string appearance_cat;
+    public string health_cat;
+
+    public static Cat createFromJson(string json)
+    {
+        return JsonUtility.FromJson<Cat>(json);
+    }
+}
 
 public class API : MonoBehaviour {
 
@@ -30,14 +42,18 @@ public class API : MonoBehaviour {
     void Start () {
         _lock = false;
         _www = null;
-        MakeTransaction("1", "1", 10, "1");
-        StartCoroutine(fuckmylife());
+        //MakeTransaction("1", "1", 10, "1");
+        //StartCoroutine(fuckmylife());
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	}
 
+    void pullHealth()
+    {
+
+    }
  
     void MakeTransaction(string userid, string name, float money, string category)
     {
@@ -51,20 +67,16 @@ public class API : MonoBehaviour {
     {
         UnityWebRequest a = UnityWebRequest.Post("ec2-34-213-177-23.us-west-2.compute.amazonaws.com:8080/transaction?user=1&transname=a&transamt=10&transcat=1", new WWWForm());
         yield return a.Send();
-        if(a.isError)
+        if(a.isNetworkError)
         {
             Debug.Log(a.error);
         } else
         {
-            Debug.Log("It bloody worked");
-        }
-
-
-        var dummy = new WWWForm();
-        using (UnityWebRequest www = UnityWebRequest.Post(URL, dummy))
-        {
-            yield return www;
-            print(www);
+            string text = a.downloadHandler.text;
+            text = text.Remove(0, 1);
+            text = text.Remove(text.Length - 1, 1);
+            var cat = Cat.createFromJson(text);
+            print(cat.health_cat);
         }
     }
 

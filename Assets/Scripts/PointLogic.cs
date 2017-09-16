@@ -18,7 +18,7 @@ public class PointLogic : MonoBehaviour {
 
     void Start()
     {
-        button.onClick.AddListener(SubtractHealth);
+     
     }
     void add_transaction(float transaction)
     {
@@ -44,23 +44,23 @@ public class PointLogic : MonoBehaviour {
     {
         if (Health > 80)
         {
-            return "Cat is healthy!";
+            return "Cat is healthy!" + Health;
         }
         else if (Health > 60)
         {
-            return "Cat's feeling okay.";
+            return "Cat's feeling okay." + Health;
         }
         else if (Health > 40)
         {
-            return "Cat's starting to feel a little sick...";
+            return "Cat's starting to feel a little sick..." + Health;
         }
         else if (Health > 20)
         {
-            return "Cat's not feeling so great...";
+            return "Cat's not feeling so great..." + Health;
         }
         else
         {
-            return "Your cat's close to dying!";
+            return "Your cat's close to dying!" + Health;
         }
     }
 

@@ -164,6 +164,11 @@ public class AI : MonoBehaviour {
     public Sprite rightSprite;
     public Sprite sleepSprite;
 
+    public CatImages sad0;
+    public CatImages sad1;
+    public CatImages sad2;
+    public CatImages sad3;
+
     public SpriteRenderer catSprite;
 
 	void Start () {
@@ -198,6 +203,27 @@ public class AI : MonoBehaviour {
     public void HealthUpdate()
     {
         Speed = GetSpeed();
+
+        if (point.Health > 80)
+        {
+            leftSprite = sad0.left;
+            rightSprite = sad0.right;
+        }
+        else if (point.Health > 60)
+        {
+            leftSprite = sad1.left;
+            rightSprite = sad1.right;
+        }
+        else if (point.Health > 40)
+        {
+            leftSprite = sad2.left;
+            rightSprite = sad2.right;
+        }
+        else
+        {
+            leftSprite = sad3.left;
+            rightSprite = sad3.right;
+        }
     }
 
     public void MoveLeft()
